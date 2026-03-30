@@ -63,6 +63,7 @@ export interface emailContent {
 /* widget config */
 export interface ShareConfig {
   uiMode: UiMode
+  shortenerServiceUrl?: string
   // imgSrc: string;
   // imageParam?: ImmutableObject<ImageParam>;
   popup: {
