@@ -19,6 +19,8 @@ export default {
   black: 'Black',
 
   includeOrgName: 'Include your organization\'s short name in the share link',
+  shortenerServiceUrl: 'Short link service URL',
+  shortenerServiceUrlHint: 'Configure a custom GET endpoint that returns a short URL.',
 
   //email
   emailContent: 'Modify sharing content',

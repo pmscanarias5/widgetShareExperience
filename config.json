@@ -1,5 +1,6 @@
 {
   "uiMode": "POPUP",
+  "shortenerServiceUrl": "https://arcg.is/prod/shorten",
   "popup": {
     "icon": "",
     "items": [

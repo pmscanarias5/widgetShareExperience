@@ -224,7 +224,7 @@ export default class Widget extends React.PureComponent<AllWidgetProps<IMConfig>
     if (enableShortUrl) {
       this.setState({ isFetchingShortLink: true }) // loading
       // 1. use short url: try to set short url
-      ShortLinkUtil.fetchShortLink(href).then((shortUrl) => {
+      ShortLinkUtil.fetchShortLink(href, this.props.config?.shortenerServiceUrl).then((shortUrl) => {
         this.onShortUrlChange(shortUrl)
         this.setState({ isFetchingShortLink: false, errorInfo: null }) // loading
       }, (failedInfo) => {

@@ -152,6 +152,14 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
       config: props.config.setIn(['emailContent'], email)
     })
   }
+
+  const onShortenerServiceUrlChange = (e) => {
+    const val = e.target.value
+    props.onSettingChange({
+      id: props.id,
+      config: props.config.set('shortenerServiceUrl', val)
+    })
+  }
   // 2.2 inline mode
 
   // for render
@@ -357,6 +365,8 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
       subSettingUI = renderSlideModeSetting();
     } */
   const emailContentUI = renderEmailContent()
+  const shortenerServiceUrl = props.intl.formatMessage({ id: 'shortenerServiceUrl', defaultMessage: nls.shortenerServiceUrl })
+  const shortenerServiceUrlHint = props.intl.formatMessage({ id: 'shortenerServiceUrlHint', defaultMessage: nls.shortenerServiceUrlHint })
   return (
     <div css={getStyle(props.theme)} className='widget-setting-menu jimu-widget-setting'>
       {/* 1. share type */}
@@ -365,6 +375,21 @@ const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
         onChanged={onUIModeChanged}
         id={props.id}
       ></ArrangementSelector>
+
+      <SettingSection title={shortenerServiceUrl} aria-label={shortenerServiceUrl} role='group'>
+        <SettingRow label={shortenerServiceUrl} />
+        <SettingRow>
+          <TextInput
+            className='w-100'
+            aria-label={shortenerServiceUrl}
+            size='sm'
+            placeholder='https://tu-dominio/shortener.php'
+            title={shortenerServiceUrlHint}
+            value={props.config.shortenerServiceUrl || ''}
+            onChange={onShortenerServiceUrlChange}
+          />
+        </SettingRow>
+      </SettingSection>
 
       {/* 2. subSetting */}
       {subSettingUI}
