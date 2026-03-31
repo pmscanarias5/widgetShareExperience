@@ -1,6 +1,6 @@
 {
   "uiMode": "POPUP",
-  "shortenerServiceUrl": "https://arcg.is/prod/shorten",
+  "shortenerServiceUrl": "http://10.67.33.52/php/acortador.php",
   "popup": {
     "icon": "",
     "items": [
